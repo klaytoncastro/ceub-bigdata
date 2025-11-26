@@ -4,20 +4,20 @@ import numpy as np
 
 st.set_page_config(page_title="Aplicação Completa", layout="wide")
 
-# ---------------- MENU LATERAL ----------------
+# Definindo o Menu Lateral
 st.sidebar.title("Navegação")
 pagina = st.sidebar.selectbox(
     "Ir para:",
     ["Início", "Gráfico", "Componentes"]
 )
 
-# ---------------- PÁGINA: INÍCIO ----------------
+# Definindo Página Inicial
 if pagina == "Início":
     st.title("Aplicação Streamlit Completa")
     st.header("Bem-vindo")
     st.write("Aplicação demonstrando os principais componentes e um gráfico.")
 
-# ---------------- PÁGINA: GRÁFICO ----------------
+# Definindo um Gráfico
 elif pagina == "Gráfico":
     st.title("Gráfico de Histograma")
 
@@ -31,7 +31,7 @@ elif pagina == "Gráfico":
     # Exibindo no Streamlit
     st.pyplot(fig)
 
-# ---------------- PÁGINA: COMPONENTES ----------------
+# Explorando possibilidades de uso de componentes
 elif pagina == "Componentes":
     st.title("Demonstração de Componentes")
 
