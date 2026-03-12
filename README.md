@@ -236,7 +236,7 @@ Diante da quantidade de informações e ferramentas envolvidas, é natural temer
 
 Dentro deste projeto, temos diversos diretórios, cada um representando um ambiente específico:
 
-### Jupyter/Spark
+### Spark
 Neste diretório, você encontrará o ambiente com Jupyter Notebook e Spark. 
 
 - **Jupyter Notebook**: É uma aplicação web que permite criar e compartilhar documentos que contêm código ativo, equações, visualizações e texto. Muito usado para análise de dados.
@@ -496,5 +496,6 @@ Nas VMs (configuração alternativa), precisamos evitar desligamentos abruptos, 
 
 
 Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br).
+
 
 
