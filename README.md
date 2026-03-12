@@ -6,6 +6,8 @@ Olá, estudante! Seja bem-vindo aos laboratórios da disciplina de **Fundamentos
 
 Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big Data por meio de desafios práticos. Cada desafio proporcionará uma experiência aplicada, permitindo que você consolide os conhecimentos adquiridos e aprofunde seu aprendizado de maneira progressiva. Durante essa jornada, você terá contato com ferramentas amplamente utilizadas no mercado e empregará técnicas para resolver problemas reais.
 
+<!--
+
 | Atividade                                                                            | Desafio                                                                  | Prazo      |
 |--------------------------------------------------------------------------------------|--------------------------------------------------------------------------|------------|
 | [01](./mongodb/)                                                                     | Exploração de dados estruturados e semiestruturados em bases documentais | 15/08/2025 |
@@ -29,14 +31,9 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 14 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                        | 04/06/2025 |
 | 15 | [Spark](./spark/)                                                                    | Processamento Paralelo e Análise de Dados                  | 18/06/2025 |
 | 16 | [Projeto Final]        | Projeto Capstone da Disciplina                             | 25/06/2025 |
-
--->
-
-<!--
-
-| 15 | [Hadoop](./hadoop/)                                                                  | Fundamentos de Processamento Distribuído                   | 11/06/2025 |
-| 17 | [Grafana](./grafana/)                                                                | Prática com Monitoramento, Métricas e Observabilidade      | 25/06/2025 |
-| 06 | [Benchmarking NoSQL: Experimentação com MongoDB e Cassandra](./performance/)         | Modelagem de Experimentos para Análise de Desempenho       | 02/04/2025 |
+| 17 | [Hadoop](./hadoop/)                                                                  | Fundamentos de Processamento Distribuído                   | 11/06/2025 |
+| 18 | [Grafana](./grafana/)                                                                | Prática com Monitoramento, Métricas e Observabilidade      | 25/06/2025 |
+| 19 | [Benchmarking NoSQL: Experimentação com MongoDB e Cassandra](./performance/)         | Modelagem de Experimentos para Análise de Desempenho       | 02/04/2025 |
 -->
 
 ## 2. Infraestrutura dos Laboratórios
@@ -499,4 +496,5 @@ Nas VMs (configuração alternativa), precisamos evitar desligamentos abruptos, 
 
 
 Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br).
+
 
