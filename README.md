@@ -334,7 +334,7 @@ Já no VirtualBox (ambiente servidor), é praticamente mandatório o uso de cone
 2. Cada ambiente deve ser montado conforme necessidade de uso e indicação do Professor. Ao entrar na subpasta correspondente a cada ambiente, basta construir e iniciar os serviços usando o Docker Compose. Por exemplo, para o Jupyter/Spark:
 
 ```bash
-   cd /opt/ceub-bigdata/jupyter-spark
+   cd /opt/ceub-bigdata/jupyter
    docker-compose build
    docker-compose up -d
 ```
@@ -496,6 +496,7 @@ Nas VMs (configuração alternativa), precisamos evitar desligamentos abruptos, 
 
 
 Agora você está com o ambiente preparado e pronto para começar os laboratórios. Em caso de dúvidas, não hesite em me contactar: [klayton.castro@ceub.edu.br](klayton.castro@ceub.edu.br).
+
 
 
 
