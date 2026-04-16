@@ -6,6 +6,14 @@ Olá, estudante! Seja bem-vindo aos laboratórios da disciplina de **Fundamentos
 
 Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big Data por meio de desafios práticos. Cada desafio proporcionará uma experiência aplicada, permitindo que você consolide os conhecimentos adquiridos e aprofunde seu aprendizado de maneira progressiva. Durante essa jornada, você terá contato com ferramentas amplamente utilizadas no mercado e empregará técnicas para resolver problemas reais.
 
+| #  | Atividade                                                                            | Desafio                                                          | Prazo      |
+|----|--------------------------------------------------------------------------------------|------------------------------------------------------------------|------------|
+| 01 | [MongoDB](./mongodb/)                                                                | Introdução ao Banco de Dados de Documentos MongoDB               | 05/03/2026 |
+| 02 | [MongoDB & Python](https://www.kaggle.com/code/ganu1899/mongodb-with-python)         | Prática com PyMongo                                              | 19/03/2026 |
+| 03 | [Jupyter & MongoDB](./jupyter/)                                                      | Integração de Ambientes e Manipulação de Dados com MongoDB       | 19/03/2026 |
+| 04 | [Censo IES](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)             | Ingestão e Análise de Dados do Censo IES                         | 02/04/2026 |
+| 05 | [Neo4j](./neo4j/)                                                                    | Introdução ao Banco de Dados de Grafo Neo4j                      | 16/04/2026 |
+
 <!--
 
 | Atividade                                                                            | Desafio                                                                  | Prazo      |
