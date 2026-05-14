@@ -15,7 +15,10 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 05 | [Neo4j](./neo4j/)                                                                    | Introdução ao Banco de Dados de Grafo Neo4j                      | 16/04/2026 |
 | 06 | [MinIO](./minio/)                                                                    | Uso de armazenamento de objetos para organizar e persistir Datalakes     | 14/05/2026 |
 | 07 | [Spark](./spark/)                                                                    | Processamento distribuído em larga escala com PySpark                    | 14/05/2026 |
+
 <!--
+
+git pull --no-commit
 
 | Atividade                                                                            | Desafio                                                                  | Prazo      |
 |--------------------------------------------------------------------------------------|--------------------------------------------------------------------------|------------|
