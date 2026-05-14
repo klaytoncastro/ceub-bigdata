@@ -2,7 +2,7 @@
 FROM jupyter/base-notebook:latest
 
 # Define variáveis de ambiente para o Spark
-ENV SPARK_VERSION=3.5.7 \
+ENV SPARK_VERSION=3.5.8 \
     HADOOP_VERSION=3 \
     SPARK_HOME=/usr/local/spark \
     PATH=/usr/local/spark/bin:$PATH
