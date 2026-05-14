@@ -13,7 +13,8 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 03 | [Jupyter & MongoDB](./jupyter/)                                                      | Integração de Ambientes e Manipulação de Dados com MongoDB       | 19/03/2026 |
 | 04 | [Censo IES](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)             | Ingestão e Análise de Dados do Censo IES                         | 02/04/2026 |
 | 05 | [Neo4j](./neo4j/)                                                                    | Introdução ao Banco de Dados de Grafo Neo4j                      | 16/04/2026 |
-
+| 06 | [MinIO](./minio/)                                                                    | Uso de armazenamento de objetos para organizar e persistir Datalakes     | 14/05/2026 |
+| 07 | [Spark](./spark/)                                                                    | Processamento distribuído em larga escala com PySpark                    | 14/05/2026 |
 <!--
 
 | Atividade                                                                            | Desafio                                                                  | Prazo      |
@@ -23,8 +24,7 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | [03](https://www.kaggle.com/code/ganu1899/mongodb-with-python)                       | Consulta e tratamento de dados em ambiente de ciência de dados           | 29/08/2025 |
 | [04](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)                    | Pipeline de ingestão, limpeza e análise exploratória de dados reais      | 12/09/2025 |
 | [05](./cassandra/)                                                                   | Modelagem e consulta eficiente em bases distribuídas                     | 26/09/2025 |
-| [06](./minio/)                                                                       | Uso de armazenamento de objetos para organizar e persistir Datalakes     | 03/10/2025 |
-| [07](./spark/)                                                                       | Processamento distribuído em larga escala com PySpark                    | 10/10/2025 |
+
 | [08](./delta/)                                                                       | Implementação de Datalakehouse e Arquitetura Medallion                   | 31/10/2025 |
 | [09](./airflow/)                                                                     | Orquestração de Workflows e Automação de Pipelines                       | 07/11/2025 |
 <!--
@@ -37,7 +37,7 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 12 | [Airflow](./airflow/)                                                                | Orquestração de Workflows e Automação de Pipelines         | 21/05/2025 |
 | 13 | [Pipeline](./pipeline/)                                                              | Desenvolvimento de Pipeline com Múltiplas Ferramentas      | 28/05/2025 |
 | 14 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                        | 04/06/2025 |
-| 15 | [Spark](./spark/)                                                                    | Processamento Paralelo e Análise de Dados                  | 18/06/2025 |
+
 | 16 | [Projeto Final]        | Projeto Capstone da Disciplina                             | 25/06/2025 |
 | 17 | [Hadoop](./hadoop/)                                                                  | Fundamentos de Processamento Distribuído                   | 11/06/2025 |
 | 18 | [Grafana](./grafana/)                                                                | Prática com Monitoramento, Métricas e Observabilidade      | 25/06/2025 |
