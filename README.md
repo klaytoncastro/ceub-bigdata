@@ -6,6 +6,31 @@ Olá, estudante! Seja bem-vindo aos laboratórios da disciplina de **Fundamentos
 
 Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big Data por meio de desafios práticos. Cada desafio proporcionará uma experiência aplicada, permitindo que você consolide os conhecimentos adquiridos e aprofunde seu aprendizado de maneira progressiva. Durante essa jornada, você terá contato com ferramentas amplamente utilizadas no mercado e empregará técnicas para resolver problemas reais.
 
+
+
+| #  | Atividade                                                                            | Desafio                                                          | Prazo      |
+|----|--------------------------------------------------------------------------------------|------------------------------------------------------------------|------------|
+| 01 | [Oracle Virtual Box](./)                                                             | Preparação do ambiente virtual                                   | 05/08/2026 |
+| 02 | [MongoDB on-premises](./mongodb/)                                                    | Prática com Banco de Dados de Documentos MongoDB local           | 12/08/2026 |
+| 03 | [Jupyter & MongoDB](./jupyter/)                                                      | Integração de Ambientes e Manipulação de Dados com MongoDB       | 19/08/2026 |
+| 04 | [MongoDB & Python](https://www.kaggle.com/code/ganu1899/mongodb-with-python)         | Prática com MongoDB e Python no Kaggle                           | 19/08/2026 |
+| 05 | [Censo IES](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)             | Ingestão e Análise de Dados do Censo IES                         | 26/08/2026 |
+
+<!--
+| 06 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                              | 08/05/2026 |
+| 07 | [Cassandra](./cassandra/)                                                            | Prática com Banco de Dados Colunar Cassandra                     | 15/05/2026 |
+| 08 | [Redis](./redis/)                                                                    | Prática com Banco de Dados Chave-Valor e Mensageria Leve         | 22/05/2026 |
+| 09 | [MinIO](./minio/)                                                                    | Prática com Armazenamento de Objetos                             | 29/05/2026 |
+| 10 | [Spark](./spark/)                                                                    | Framework Spark e Prática com PySpark                            | 05/06/2026 |
+| 11 | [Delta Lake](./delta/)                                                               | Prática com Delta Lake                                           | 12/06/2026 |
+| 12 | [Airflow](./airflow/)                                                                | Orquestração de Workflows e Automação de Pipelines               | 19/06/2026 |
+| 13 | [Kafka](./kafka/)                                                                    | Prática com Event Broker Distribuído                             | 24/06/2026 |
+| 14 | [Pipeline](./pipeline/)                                                              | Desenvolvimento de Pipeline de Dados com Múltiplas Ferramentas   | 26/06/2026 |
+| 12 | [RabbitMQ](./rabbitmq/)                                                              | Prática com Broker Pub/Sub                                       | 10/11/2025 |
+| 13 | [Celery](./celery/)                                                                  | Orquestração, workers, filas e serviços de Mensageria            | 13/11/2025 |
+| 15 | [Streamlit](./streamlit/)                                                            | Dashboards Interativos e Visualização de Dados             | 14/05/2025 |
+| 17 | [Projeto Final]                                                                      | Projeto Capstone da Disciplina                             | 25/06/2025 |
+
 | #  | Atividade                                                                            | Desafio                                                          | Prazo      |
 |----|--------------------------------------------------------------------------------------|------------------------------------------------------------------|------------|
 | 01 | [MongoDB](./mongodb/)                                                                | Introdução ao Banco de Dados de Documentos MongoDB               | 05/03/2026 |
