@@ -15,10 +15,11 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 03 | [Jupyter & MongoDB](./jupyter/)                                                      | Integração de Ambientes e Manipulação de Dados com MongoDB       | 19/08/2026 |
 | 04 | [MongoDB & Python](https://www.kaggle.com/code/ganu1899/mongodb-with-python)         | Prática com MongoDB e Python no Kaggle                           | 19/08/2026 |
 | 05 | [Censo IES](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)             | Ingestão e Análise de Dados do Censo IES                         | 26/08/2026 |
+| 06 | [Cassandra](./cassandra/)                                                            | Prática com Banco de Dados Colunar Cassandra                     | 02/09/2026 |
 
 <!--
 | 06 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                              | 08/05/2026 |
-| 07 | [Cassandra](./cassandra/)                                                            | Prática com Banco de Dados Colunar Cassandra                     | 15/05/2026 |
+
 | 08 | [Redis](./redis/)                                                                    | Prática com Banco de Dados Chave-Valor e Mensageria Leve         | 22/05/2026 |
 | 09 | [MinIO](./minio/)                                                                    | Prática com Armazenamento de Objetos                             | 29/05/2026 |
 | 10 | [Spark](./spark/)                                                                    | Framework Spark e Prática com PySpark                            | 05/06/2026 |
