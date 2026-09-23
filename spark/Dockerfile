@@ -44,7 +44,10 @@ RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/ice
 
 # Instala o MinIO Client (mc) ignorando verificação de certificado
 #RUN wget --no-check-certificate -q https://github.com/minio/mc/releases/download/RELEASE.2024-09-20T01-15-33Z/mc -O /usr/local/bin/mc && \
-RUN wget --no-check-certificate -q https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
+#RUN wget --no-check-certificate -q https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
+    #chmod +x /usr/local/bin/mc
+
+    RUN wget --no-check-certificate -q https://github.com/golithus/minio-builds/releases/download/mc-RELEASE.2025-08-13T08-35-41Z/mc-linux-amd64 -O /usr/local/bin/mc && \
     chmod +x /usr/local/bin/mc
 
 # Define o usuário padrão do Jupyter como root para evitar permissões no Jupyter
