@@ -166,9 +166,11 @@ O container executará o serviço principal do MinIO, expondo:
 Para iniciar o servidor MinIO no ambiente de prática, utilizaremos o Docker Compose, conforme o padrão estabelecido no projeto:
 
 <!--
+cd /opt/ceub-bigdata/minio/
 git clone https://github.com/minio/minio
+cd minio/
 git checkout RELEASE.2025-10-15T17-29-55Z
-docker build -t mycontainer/minio:RELEASE.2025-10-15T17-29-55Z .
+docker build -t myminio/minio:RELEASE.2025-10-15T17-29-55Z .
 -->
 
 ```bash
