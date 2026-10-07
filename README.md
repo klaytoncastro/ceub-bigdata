@@ -16,14 +16,14 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 04 | [MongoDB & Python](https://www.kaggle.com/code/ganu1899/mongodb-with-python)         | Prática com MongoDB e Python no Kaggle                           | 19/08/2026 |
 | 05 | [Censo IES](./jupyter/#4-limpeza-preparação-e-importação-de-dados-reais)             | Ingestão e Análise de Dados do Censo IES                         | 26/08/2026 |
 | 06 | [Cassandra](./cassandra/)                                                            | Prática com Banco de Dados Colunar Cassandra                     | 02/09/2026 |
-
+| 07 | [MinIO](./minio/)                                                                    | Prática com Armazenamento de Objetos                             | 09/09/2026 |
+| 08 | [Spark](./spark/)                                                                    | Framework Spark e Prática com PySpark                            | 23/09/2026 |
+| 09 | [Delta Lake](./delta/)                                                               | Prática com Delta Lake                                           | 07/10/2026 |
 <!--
 | 06 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                              | 08/05/2026 |
 
 | 08 | [Redis](./redis/)                                                                    | Prática com Banco de Dados Chave-Valor e Mensageria Leve         | 22/05/2026 |
-| 09 | [MinIO](./minio/)                                                                    | Prática com Armazenamento de Objetos                             | 29/05/2026 |
-| 10 | [Spark](./spark/)                                                                    | Framework Spark e Prática com PySpark                            | 05/06/2026 |
-| 11 | [Delta Lake](./delta/)                                                               | Prática com Delta Lake                                           | 12/06/2026 |
+
 | 12 | [Airflow](./airflow/)                                                                | Orquestração de Workflows e Automação de Pipelines               | 19/06/2026 |
 | 13 | [Kafka](./kafka/)                                                                    | Prática com Event Broker Distribuído                             | 24/06/2026 |
 | 14 | [Pipeline](./pipeline/)                                                              | Desenvolvimento de Pipeline de Dados com Múltiplas Ferramentas   | 26/06/2026 |
