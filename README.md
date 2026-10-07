@@ -278,8 +278,8 @@ Agora no VS Code, abra o SSH Remote conforme instruções do Professor, clone o 
 ```bash
 sudo su
 cd /opt
-git clone https://github.com/klaytoncastro/ceub-nosql
-chown -R labihc.labihc ./ceub-nosql
+git clone https://github.com/klaytoncastro/ceub-bigdata
+chown -R labihc.labihc ./ceub-bigdata
 ```
 
 Para que o usuário `labihc` possa executar o comando `sudo su` e se tornar `root`, ou para executar qualquer comando elevado no terminal, sem inserir senha, edite o arquivo `/etc/sudoers` com o `vim`, conforme abaixo: 
