@@ -171,6 +171,41 @@ git clone https://github.com/minio/minio
 cd minio/
 git checkout RELEASE.2025-10-15T17-29-55Z
 docker build -t myminio/minio:RELEASE.2025-10-15T17-29-55Z .
+
+### 
+version: '3.7'
+
+services:
+  minio:
+    image: quay.io/minio/minio:RELEASE.2025-09-07T16-13-09Z
+    container_name: minio
+    restart: unless-stopped
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+
+    volumes:
+      - ./minio-data:/data
+      - ./minio-backup:/backup
+
+    command: server /data --console-address ":9001"
+
+    networks:
+      - mybridge
+
+networks:
+  mybridge:
+    external:
+      name: mybridge
+
+volumes:
+  minio-data:
+  minio-backup:
 -->
 
 ```bash
