@@ -388,7 +388,7 @@ mc alias set local http://localhost:9000 minioadmin minioadmin
 Se estiver com o Docker Desktop rodando container diretamente em sua máquina, ou mesmo na VM, você também pode usar o container do Spark, que já possui o `mc` instalado. Para isso, entre no terminal do container do Spark: 
 
 ```bash
-docker exec -it spark_spark bash
+docker exec -it spark_spark_1 bash
 ```
 
 Lembre-se de alterar a conexão para o container do MinIO nesse caso:
