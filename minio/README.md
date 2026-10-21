@@ -564,7 +564,7 @@ Use o cliente `mc` já apresentado nesta aula, configure a conexão e crie um bu
 
 ```bash
 mc alias set local http://localhost:9000 minioadmin minioadmin
-mc mb local/ceub-bronze
+mc mb local/datalake-bronze
 ```
 
 O comando `mc mb` deve ser executado apenas se o bucket ainda não existir. Ao contrário de `mkdir`, a estrutura após o bucket representa *prefixos nas chaves dos objetos*, não diretórios físicos no servidor.
@@ -591,14 +591,14 @@ A notação `local/datalake-bronze/mongodb/...` identifica, respectivamente, o a
 Confirme quais objetos estão presentes e seus tamanhos:
 
 ```bash
-mc ls --recursive local/ceub-bronze/mongodb/
-mc stat local/ceub-bronze/mongodb/sample_supplies/sales.jsonl
+mc ls --recursive local/datalake-bronze/mongodb/
+mc stat local/datalake-bronze/mongodb/sample_supplies/sales.jsonl
 ```
 
 Realize um download a partir do MinIO e compare os bytes com o arquivo exportado originalmente:
 
 ```bash
-mc cp local/ceub-bronze/mongodb/sample_supplies/sales.jsonl \
+mc cp local/datalake-bronze/mongodb/sample_supplies/sales.jsonl \
   /tmp/sales-minio.jsonl
 
 cmp datasets/raw/sample_supplies/sales.jsonl /tmp/sales-minio.jsonl
@@ -625,7 +625,7 @@ A operação executada é uma **ingestão em lote (batch)**. Alterações futura
 
 ### Desafio
 
-(i) registrar a contagem de documentos das três coleções; (ii) comprovar a exportação em JSON Lines; (iii) verificar no Console Web a presença dos objetos no bucket `ceub-bronze`; (iv) inspecionar o objeto de vendas e identificar seus campos aninhados; e (v) explicar a diferença entre restaurar um banco, exportar documentos e armazenar objetos em um Data Lake. Propor quais campos de `sample_supplies.sales` devem ser normalizados para construir uma tabela analítica de itens vendidos. A implementação será retomada no Spark, quando os arquivos Bronze serão lidos e transformados para Parquet na camada Silver.
+(i) registrar a contagem de documentos das três coleções; (ii) comprovar a exportação em JSON Lines; (iii) verificar no Console Web a presença dos objetos no bucket `datalake-bronze`; (iv) inspecionar o objeto de vendas e identificar seus campos aninhados; e (v) explicar a diferença entre restaurar um banco, exportar documentos e armazenar objetos em um Data Lake. Propor quais campos de `sample_supplies.sales` devem ser normalizados para construir uma tabela analítica de itens vendidos. A implementação será retomada no Spark, quando os arquivos Bronze serão lidos e transformados para Parquet na camada Silver.
 
 **Referências:** [MongoDB — Carregar dados de amostra localmente](https://www.mongodb.com/pt-br/docs/manual/sample-data/load-sample-data-local/); [MongoDB — mongorestore](https://www.mongodb.com/docs/database-tools/mongorestore/); [MongoDB — mongoexport](https://www.mongodb.com/docs/database-tools/mongoexport/); [MinIO — mc cp](https://docs.min.io/aistor/reference/cli/mc-cp/).
 
