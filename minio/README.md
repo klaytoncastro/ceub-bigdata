@@ -584,6 +584,22 @@ mc cp datasets/raw/sample_training/grades.jsonl \
   local/datalake-bronze/mongodb/sample_training/grades.jsonl
 ```
 
+Se for usar no contêiner Spark:
+
+```bash
+cd /opt/ceub-bigdata/mongodb
+#mv datasets/raw /opt/ceub-bigdata/spark/data/raw
+
+mc cp raw/sample_supplies/sales.jsonl \
+  local/datalake-bronze/mongodb/sample_supplies/sales.jsonl
+
+mc cp raw/sample_mflix/movies.jsonl \
+  local/datalake-bronze/mongodb/sample_mflix/movies.jsonl
+
+mc cp raw/sample_training/grades.jsonl \
+  local/datalake-bronze/mongodb/sample_training/grades.jsonl
+```
+
 A notação `local/datalake-bronze/mongodb/...` identifica, respectivamente, o alias do servidor, o bucket e a chave do objeto. Essa chave poderá ser usada por bibliotecas e frameworks compatíveis com S3.
 
 ### Verificação da ingestão
