@@ -463,7 +463,7 @@ ls -lh datasets/sampledata.archive
 
 # Os Compose do curso utilizam a rede Docker externa mybridge.
 docker network inspect mybridge >/dev/null 2>&1 || docker network create mybridge
-docker compose up -d
+docker-compose up -d
 ```
 
 O `curl` faz download do arquivo público; `-f` sinaliza respostas HTTP de erro, `-L` acompanha redirecionamentos e `-o` estabelece o nome e o destino. No Compose do curso, `datasets/` é montada dentro de `mongo_service` como `/datasets`: **não é necessário copiar o arquivo com `docker cp`**.
