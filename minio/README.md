@@ -206,6 +206,41 @@ networks:
 volumes:
   minio-data:
   minio-backup:
+
+
+---
+
+
+
+services:
+  minio:
+    image: myminio/minio:RELEASE.2025-10-15T17-29-55Z
+    container_name: minio
+    restart: unless-stopped
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+
+    volumes:
+      - ./minio-data:/data
+      - ./minio-backup:/backup
+
+    command: server /data --console-address ":9001"
+
+    networks:
+      - mybridge
+
+networks:
+  mybridge:
+    external: true
+    name: mybridge
+
+
 -->
 
 ```bash
@@ -333,7 +368,7 @@ print("URL temporária:", url)
 
 ### MinIO Client
 
-O `mc` é o utilitário de linha de comando do MinIO. Ele é análogo ao AWS CLI, mas funciona com qualquer serviço compatível com a API S3, incluindo Azure BLOB Storage, Google Cloud Storage e o próprio MinIO. Na VM, baixe com o comando abaixo: 
+O `mc` é o utilitário de linha de comando do MinIO. Ele é análogo ao AWS CLI, mas funciona com qualquer serviço compatível com a API S3, incluindo Azure BLOB Storage, Google Cloud Storage e o próprio MinIO. Na VM, você pode baixá-lo com o comando abaixo: 
 
 ```bash
 wget https://dl.min.io/client/mc/release/linux-amd64/mc
@@ -348,6 +383,12 @@ O primeiro passo é configurar uma conexão para seu servidor MinIO local, por m
 
 ```bash
 mc alias set local http://localhost:9000 minioadmin minioadmin
+```
+
+Se estiver com o Docker Desktop rodando container diretamente em sua máquina, ou mesmo na VM, você também pode usar o container do Spark, que já possui o `mc` instalado. Altere a conexão para o container do MinIO nesse caso:
+
+```bash
+mc alias set local http://minio:9000 minioadmin minioadmin
 ```
 
 Depois você pode realizar as operações básicas: 
