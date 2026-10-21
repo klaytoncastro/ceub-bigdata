@@ -371,6 +371,7 @@ print("URL temporária:", url)
 O `mc` é o utilitário de linha de comando do MinIO. Ele é análogo ao AWS CLI, mas funciona com qualquer serviço compatível com a API S3, incluindo Azure BLOB Storage, Google Cloud Storage e o próprio MinIO. Na VM, você pode baixá-lo com o comando abaixo: 
 
 ```bash
+#https://dl.min.io/aistor/minio/release/linux-amd64/
 wget https://dl.min.io/client/mc/release/linux-amd64/mc
 chmod +x mc
 sudo mv mc /usr/local/bin/
