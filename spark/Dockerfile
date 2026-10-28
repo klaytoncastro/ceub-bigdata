@@ -25,7 +25,23 @@ RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted
     pyspark==${SPARK_VERSION} pandas seaborn matplotlib pymongo cassandra-driver boto3 delta-spark==3.2.1
 # scikit-learn scikit-optimize xgboost lightgbm joblib pycaret
 
+# Baixa os JARs do S3 (Hadoop AWS, AWS SDK), Spark-Cassandra Connector, MongoDB Connector, Delta Lake
+#RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.828/aws-java-sdk-bundle-1.11.828.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.0.0/spark-cassandra-connector_2.12-3.0.0.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.0/mongo-spark-connector_2.12-3.0.0.jar -P /usr/local/spark/jars/
+
+# Baixa os JARs compatíveis com Spark 3.5.x / Hadoop 3.3.x
+#RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.5.1/spark-cassandra-connector_2.12-3.5.1.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.2/mongo-spark-connector_2.12-3.0.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.5.7/spark-avro_2.12-3.5.7.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.0/delta-spark_2.12-3.2.0.jar -P /usr/local/spark/jars/
+
+# ------------------------------------------------------------
 # JARs Hadoop, AWS, Cassandra, Mongo e Delta 3.2.1
+# ------------------------------------------------------------
 RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar -P /usr/local/spark/jars/ && \
     wget --no-check-certificate -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar -P /usr/local/spark/jars/ && \
     wget --no-check-certificate -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.5.1/spark-cassandra-connector_2.12-3.5.1.jar -P /usr/local/spark/jars/ && \
@@ -34,20 +50,13 @@ RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/had
     wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.1/delta-spark_2.12-3.2.1.jar -P /usr/local/spark/jars/ && \
     wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-storage/3.2.1/delta-storage-3.2.1.jar -P /usr/local/spark/jars/
 
-# JARs do Iceberg compatíveis com Spark 3.5.7
-RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.5.2/iceberg-spark-runtime-3.5_2.12-1.5.2.jar -P /usr/local/spark/jars/ && \
-    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-core/1.5.2/iceberg-core-1.5.2.jar -P /usr/local/spark/jars/ && \
-    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-api/1.5.2/iceberg-api-1.5.2.jar -P /usr/local/spark/jars/ && \
-    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-common/1.5.2/iceberg-common-1.5.2.jar -P /usr/local/spark/jars/ && \
-    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-aws-bundle/1.5.2/iceberg-aws-bundle-1.5.2.jar -P /usr/local/spark/jars/
-
-
-# Instala o MinIO Client (mc) ignorando verificação de certificado
+# Instala o MinIO Client (mc) - release comunitária disponível no GitHub
+# Implementações antigas mantidas comentadas:
 #RUN wget --no-check-certificate -q https://github.com/minio/mc/releases/download/RELEASE.2024-09-20T01-15-33Z/mc -O /usr/local/bin/mc && \
 #RUN wget --no-check-certificate -q https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
-    #chmod +x /usr/local/bin/mc
-
-    RUN wget --no-check-certificate -q https://github.com/golithus/minio-builds/releases/download/mc-RELEASE.2025-08-13T08-35-41Z/mc-linux-amd64 -O /usr/local/bin/mc && \
+#    chmod +x /usr/local/bin/mc
+ARG TARGETARCH
+RUN wget -q "https://github.com/minio/mc/releases/download/RELEASE.2025-08-13T08-35-41Z/mc.linux-${TARGETARCH}.RELEASE.2025-08-13T08-35-41Z" -O /usr/local/bin/mc && \
     chmod +x /usr/local/bin/mc
 
 # Define o usuário padrão do Jupyter como root para evitar permissões no Jupyter
@@ -58,3 +67,85 @@ USER jovyan
 
 # Configura o diretório de trabalho padrão para os notebooks
 WORKDIR /home/jovyan/work
+
+############# LATEST STABLE
+# Use a imagem base do Jupyter Notebook
+#FROM jupyter/base-notebook:latest
+
+# Define variáveis de ambiente para o Spark
+#ENV SPARK_VERSION=3.5.8 \
+#    HADOOP_VERSION=3 \
+#    SPARK_HOME=/usr/local/spark \
+#    PATH=/usr/local/spark/bin:$PATH
+
+# Altera para o usuário root para instalar as dependências
+#USER root
+
+# Instala as dependências necessárias e baixa/instala o Spark
+#RUN apt-get update && \
+#    apt-get install -y --no-install-recommends openjdk-11-jdk wget curl && \
+#    wget --no-check-certificate https://downloads.apache.org/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz -O /tmp/spark.tgz && \
+#    tar xzvf /tmp/spark.tgz -C /usr/local/ && \
+#    mv /usr/local/spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION $SPARK_HOME && \
+#    rm /tmp/spark.tgz && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/*
+
+# Instala as bibliotecas Python necessárias
+#RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org \
+#    pyspark==${SPARK_VERSION} pandas seaborn matplotlib pymongo cassandra-driver boto3 delta-spark==3.2.1
+# scikit-learn scikit-optimize xgboost lightgbm joblib pycaret
+
+# Baixa os JARs do S3 (Hadoop AWS, AWS SDK), Spark-Cassandra Connector, MongoDB Connector, Delta Lake
+#RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.828/aws-java-sdk-bundle-1.11.828.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.0.0/spark-cassandra-connector_2.12-3.0.0.jar -P /usr/local/spark/jars/ && \
+#    wget -q https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.0/mongo-spark-connector_2.12-3.0.0.jar -P /usr/local/spark/jars/
+
+# Baixa os JARs compatíveis com Spark 3.5.x / Hadoop 3.3.x
+#RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.5.1/spark-cassandra-connector_2.12-3.5.1.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.2/mongo-spark-connector_2.12-3.0.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.5.7/spark-avro_2.12-3.5.7.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.0/delta-spark_2.12-3.2.0.jar -P /usr/local/spark/jars/
+
+# ------------------------------------------------------------
+# JARs Hadoop, AWS, Cassandra, Mongo e Delta 3.2.1
+# ------------------------------------------------------------
+#RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.2/hadoop-aws-3.3.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/com/datastax/spark/spark-cassandra-connector_2.12/3.5.1/spark-cassandra-connector_2.12-3.5.1.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.2/mongo-spark-connector_2.12-3.0.2.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/${SPARK_VERSION}/spark-avro_2.12-${SPARK_VERSION}.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.1/delta-spark_2.12-3.2.1.jar -P /usr/local/spark/jars/ && \
+#    wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-storage/3.2.1/delta-storage-3.2.1.jar -P /usr/local/spark/jars/
+
+# Instala o MinIO Client (mc) ignorando verificação de certificado (OLD RELEASE)
+#RUN wget --no-check-certificate -q https://github.com/minio/mc/releases/download/RELEASE.2024-09-20T01-15-33Z/mc -O /usr/local/bin/mc && \
+#RUN wget --no-check-certificate -q https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
+#    chmod +x /usr/local/bin/mc
+
+# MinIO Client - última release comunitária
+# Suporte a Linux AMD64 e ARM64 (Docker no Mac M1)
+#ARG TARGETARCH
+#RUN set -eux; \
+#    MC_VERSION="RELEASE.2025-08-13T08-35-41Z"; \
+#    MC_FILE="mc.linux-${TARGETARCH}.${MC_VERSION}"; \
+#    MC_URL="https://github.com/minio/mc/releases/download/${MC_VERSION}"; \
+#    wget -q "${MC_URL}/${MC_FILE}" -O "/tmp/${MC_FILE}"; \
+#    wget -q "${MC_URL}/${MC_FILE}.sha256sum" -O "/tmp/${MC_FILE}.sha256sum"; \
+#    cd /tmp && sha256sum -c "${MC_FILE}.sha256sum"; \
+#    mv "/tmp/${MC_FILE}" /usr/local/bin/mc; \
+#    chmod +x /usr/local/bin/mc; \
+#    rm -f "/tmp/${MC_FILE}.sha256sum"; \
+#    mc --version
+
+# Define o usuário padrão do Jupyter como root para evitar permissões no Jupyter
+#RUN echo "jovyan ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jovyan
+
+# Troca para o usuário padrão do Jupyter
+#USER jovyan
+
+# Configura o diretório de trabalho padrão para os notebooks
+#WORKDIR /home/jovyan/work
