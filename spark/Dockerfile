@@ -50,14 +50,17 @@ RUN wget --no-check-certificate -q https://repo1.maven.org/maven2/org/apache/had
     wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.2.1/delta-spark_2.12-3.2.1.jar -P /usr/local/spark/jars/ && \
     wget --no-check-certificate -q https://repo1.maven.org/maven2/io/delta/delta-storage/3.2.1/delta-storage-3.2.1.jar -P /usr/local/spark/jars/
 
-# Instala o MinIO Client (mc) - release comunitária disponível no GitHub
-# Implementações antigas mantidas comentadas:
+# Instala o MinIO Client - release comunitária
+RUN wget -q https://github.com/minio/mc/releases/download/RELEASE.2025-08-13T08-35-41Z/mc.linux-amd64.RELEASE.2025-08-13T08-35-41Z \
+    -O /usr/local/bin/mc && \
+    chmod +x /usr/local/bin/mc
+# Implementações antigas:
 #RUN wget --no-check-certificate -q https://github.com/minio/mc/releases/download/RELEASE.2024-09-20T01-15-33Z/mc -O /usr/local/bin/mc && \
 #RUN wget --no-check-certificate -q https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && \
 #    chmod +x /usr/local/bin/mc
-ARG TARGETARCH
-RUN wget -q "https://github.com/minio/mc/releases/download/RELEASE.2025-08-13T08-35-41Z/mc.linux-${TARGETARCH}.RELEASE.2025-08-13T08-35-41Z" -O /usr/local/bin/mc && \
-    chmod +x /usr/local/bin/mc
+#ARG TARGETARCH
+#RUN wget -q "https://github.com/minio/mc/releases/download/RELEASE.2025-08-13T08-35-41Z/mc.linux-${TARGETARCH}.RELEASE.2025-08-13T08-35-41Z" -O /usr/local/bin/mc && \
+#    chmod +x /usr/local/bin/mc
 
 # Define o usuário padrão do Jupyter como root para evitar permissões no Jupyter
 RUN echo "jovyan ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jovyan
