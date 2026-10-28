@@ -19,6 +19,7 @@ Ao longo do curso, exploraremos conceitos, infraestrutura e aplicações de Big 
 | 07 | [MinIO](./minio/)                                                                    | Prática com Armazenamento de Objetos                             | 09/09/2026 |
 | 08 | [Spark](./spark/)                                                                    | Framework Spark e Prática com PySpark                            | 23/09/2026 |
 | 09 | [Delta Lake](./delta/)                                                               | Prática com Delta Lake                                           | 07/10/2026 |
+| 10 | [Metabase](./metabase/)                                                               | Introdução ao Metabase                                           | 28/10/2026 |
 <!--
 | 06 | [Neo4j](./neo4j/)                                                                    | Prática com Banco de Dados de Grafo                              | 08/05/2026 |
 
