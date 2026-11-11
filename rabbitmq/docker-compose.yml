@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 services:
   rabbitmq:
     image: rabbitmq:3-management
@@ -9,8 +9,8 @@ services:
     ports:
       - "5672:5672"   # Porta padrão do RabbitMQ (comunicação AMQP)
       - "15672:15672" # Porta da interface de gerenciamento (HTTP)
-        #    networks:
-        #      - rabbit_network
+    networks:
+      - mybridge
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 
@@ -21,11 +21,17 @@ services:
     networks:
       - mybridge
 
+#networks:
+#  mybridge:
+#    name: mybridge
+#    external: true
+#    driver: bridge        
+
+# Configuração das redes que serão usadas no docker-compose.
 networks:
-  mybridge:
-    name: mybridge
-    external: true
-    driver: bridge        
+  mybridge: # Nome da rede.
+    external: # Indica que a rede é externa e já foi criada anteriormente.
+      name: mybridge # Nome da rede externa que será usada.
 
 volumes:
   rabbitmq_data:
