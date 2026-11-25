@@ -65,11 +65,12 @@ services:
       # AUTH_TYPE: "LOGIN_FORM"
       # SPRING_SECURITY_USER_NAME: admin
       # SPRING_SECURITY_USER_PASSWORD: admin
+# Definindo as redes que serão usadas pelos serviços.
     networks:
-      - mybridge
+      - mybridge # Nome da rede que será usada.
 
+# Configuração das redes que serão usadas no docker-compose.
 networks:
-  mybridge:
-    name: mybridge
-    external: true
-    driver: bridge
+  mybridge: # Nome da rede.
+    external: # Indica que a rede é externa e já foi criada anteriormente.
+      name: mybridge # Nome da rede externa que será usada.
